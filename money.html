@@ -914,3 +914,29 @@
 </script>
 </body>
 </html>
+</div> <!-- ปิด card-grid -->
+</section>
+
+<script>
+const scrollLine = document.getElementById("scrollLine");
+
+window.addEventListener("scroll",()=>{
+  const height=document.documentElement.scrollHeight-window.innerHeight;
+  const scrollTop=window.scrollY;
+  scrollLine.style.width=(scrollTop/height)*100+"%";
+});
+
+// reveal animation
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("visible");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
